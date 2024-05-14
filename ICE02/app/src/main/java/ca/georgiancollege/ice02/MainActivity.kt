@@ -1,7 +1,8 @@
 package ca.georgiancollege.ice02
 
 import android.os.Bundle
-import android.widget.TextView
+import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,5 +29,26 @@ class MainActivity : AppCompatActivity()
 
         val helloWorldString = binding.helloWorldTextView
         helloWorldString.text = getString(R.string.greeting_string)
+
+        val clickMeButton = binding.clickMeButton
+        clickMeButton.setOnClickListener{
+            Log.i("onCreate", "Click me button pressed")
+
+            binding.helloWorldTextView.text = getString(R.string.good_bye_string)
+        }
+
+        val anotherButton = binding.anotherButton
+        anotherButton.setOnClickListener{
+            Log.i("onCreate", "Another button pressed")
+
+            binding.helloWorldTextView.text = getString(R.string.greeting_string)
+        }
+    }
+
+    //create new function to share button handling which takes in a view
+    // We are going to call sharedButtonHandler and pass in the view? or button?
+    fun sharedButtonHandler(view: View)
+    {
+
     }
 }

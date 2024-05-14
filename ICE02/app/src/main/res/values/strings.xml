@@ -4,4 +4,6 @@
     <string name="good_bye_string">Good bye!</string>
     <string name="greeting_string">Hello, Basil!</string>
     <string name="clickMeButtonText">Click Me!</string>
+    <string name="goodbye_text">Goodbye, Basil!</string>
+    <string name="second_button_text">Also Me!</string>
 </resources>
