@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ICE02</string>
     <string name="hello_string">Hello, World!</string>
-    <string name="good_bye_string">Good bye!</string>
     <string name="greeting_string">Hello, Basil!</string>
+    <string name="good_bye_string">Good bye, Basil!</string>
+    <string name="welcome_back_string">Welcome back, Basil!</string>
     <string name="clickMeButtonText">Click Me!</string>
-    <string name="goodbye_text">Goodbye, Basil!</string>
     <string name="second_button_text">Also Me!</string>
 </resources>

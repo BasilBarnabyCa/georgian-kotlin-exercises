@@ -3,6 +3,7 @@ package ca.georgiancollege.ice02
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,10 +14,14 @@ class MainActivity : AppCompatActivity()
 {
     // Initializes binding with the shape of ActivityMainBinding
     private lateinit var binding: ActivityMainBinding
+
+    // Initializes helloWorldString with the shape of TextView
+    private lateinit var helloWorldString: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //creates reference to the ActivityMainBinding Class Object
+        //Creates a reference to the ActivityMainBinding Class Object
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         enableEdgeToEdge()
@@ -27,28 +32,34 @@ class MainActivity : AppCompatActivity()
             insets
         }
 
-        val helloWorldString = binding.helloWorldTextView
+        helloWorldString = binding.helloWorldTextView
         helloWorldString.text = getString(R.string.greeting_string)
 
         val clickMeButton = binding.clickMeButton
         clickMeButton.setOnClickListener{
-            Log.i("onCreate", "Click me button pressed")
-
-            binding.helloWorldTextView.text = getString(R.string.good_bye_string)
+            sharedButtonHandler(it)
         }
 
         val anotherButton = binding.anotherButton
         anotherButton.setOnClickListener{
-            Log.i("onCreate", "Another button pressed")
-
-            binding.helloWorldTextView.text = getString(R.string.greeting_string)
+            sharedButtonHandler(it)
         }
     }
 
     //create new function to share button handling which takes in a view
     // We are going to call sharedButtonHandler and pass in the view? or button?
-    fun sharedButtonHandler(view: View)
+    private fun sharedButtonHandler(view: View)
     {
-
+        when(view.id)
+        {
+            R.id.clickMeButton -> {
+                helloWorldString.text = getString(R.string.good_bye_string)
+                Log.i("onCreate", "Click me button pressed!")
+            }
+            R.id.anotherButton -> {
+                helloWorldString.text = getString(R.string.welcome_back_string)
+                Log.i("onCreate", "Another button pressed!")
+            }
+        }
     }
 }
