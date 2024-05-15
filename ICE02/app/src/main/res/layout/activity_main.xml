@@ -8,52 +8,56 @@
     android:background="@drawable/light_gradient_background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/helloWorldTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/hello_string"
-        android:textColor="@color/text_dark"
-        android:textSize="@dimen/text_size"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloWorldTextView">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/loginButton"
-            style="@style/Widget.Material3.Button"
+        <TextView
+            android:id="@+id/helloWorldTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/button_margin_right"
-            android:backgroundTint="@color/bg_success"
+            android:layout_marginBottom="@dimen/title_text_margin_bottom"
             android:fontFamily="@font/poppins_semibold"
-            android:text="@string/login_button_text"
-            android:textColor="@color/bg_success_text_color"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/hello_string"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/logoutButton"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/bg_secondary"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/logout_button_text"
-            android:textColor="@color/text_secondary"
-            android:textSize="@dimen/button_text_size" />
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/loginButton"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/button_margin_right"
+                android:backgroundTint="@color/bg_success"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/login_button_text"
+                android:textColor="@color/bg_success_text_color"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/logoutButton"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/bg_secondary"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/logout_button_text"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
