@@ -3,8 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF0000</color>
+    <color name="bg_success">#6FB67E</color>
+    <color name="bg_secondary">#C58CB8</color>
+    <color name="bg_success_text_color">#323e35</color>
     <color name="text_dark">#0f172a</color>
     <color name="text_secondary">#591748</color>
-    <color name="bg_success">#6FB67E</color>
-    <color name="bg_secondary">#B37EA7</color>
 </resources>

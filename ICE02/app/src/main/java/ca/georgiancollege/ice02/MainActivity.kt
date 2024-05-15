@@ -33,32 +33,31 @@ class MainActivity : AppCompatActivity()
         }
 
         helloWorldString = binding.helloWorldTextView
-        helloWorldString.text = getString(R.string.greeting_string)
+        helloWorldString.text = getString(R.string.hello_string)
 
-        val clickMeButton = binding.clickMeButton
-        clickMeButton.setOnClickListener{
-            sharedButtonHandler(it)
+        val loginButton = binding.loginButton
+        loginButton.setOnClickListener{
+            buttonPressHandler(it)
         }
 
-        val anotherButton = binding.anotherButton
-        anotherButton.setOnClickListener{
-            sharedButtonHandler(it)
+        val logoutButton = binding.logoutButton
+        logoutButton.setOnClickListener{
+            buttonPressHandler(it)
         }
     }
 
-    //create new function to share button handling which takes in a view
-    // We are going to call sharedButtonHandler and pass in the view? or button?
-    private fun sharedButtonHandler(view: View)
+    // Function to handle both buttons and their actions
+    private fun buttonPressHandler(view: View)
     {
         when(view.id)
         {
-            R.id.clickMeButton -> {
-                helloWorldString.text = getString(R.string.good_bye_string)
-                Log.i("onCreate", "Click me button pressed!")
-            }
-            R.id.anotherButton -> {
+            R.id.loginButton -> {
                 helloWorldString.text = getString(R.string.welcome_back_string)
-                Log.i("onCreate", "Another button pressed!")
+                Log.i("onCreate", "Login button pressed!")
+            }
+            R.id.logoutButton -> {
+                helloWorldString.text = getString(R.string.good_bye_string)
+                Log.i("onCreate", "Logout button pressed!")
             }
         }
     }
