@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ICE03</string>
+    <string name="hello_string">Hello!</string>
+    <string name="good_bye_string">Good bye, Basil!</string>
+    <string name="welcome_back_string">Welcome back, Basil!</string>
+    <string name="login_button_text">Login</string>
+    <string name="logout_button_text">Logout</string>
+</resources>
