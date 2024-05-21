@@ -8,4 +8,8 @@
     <color name="bg_success_text_color">#323e35</color>
     <color name="text_dark">#0f172a</color>
     <color name="text_secondary">#591748</color>
+
+    <color name="bg_light_grey">#A4A4A4</color>
+    <color name="bg_dark_grey">#333333</color>
+    <color name="bg_orange">#FD9D18</color>
 </resources>
