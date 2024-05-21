@@ -9,6 +9,79 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/thirdRowLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/secondRowLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/fourButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="@dimen/margin_x"
+            android:layout_marginEnd="@dimen/margin_x"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_dark_grey"
+            android:fontFamily="@font/fa_solid_900"
+            android:paddingStart="@dimen/padding_x"
+            android:paddingEnd="@dimen/padding_x"
+            android:text="4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/fiveButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="@dimen/margin_x"
+            android:layout_marginEnd="@dimen/margin_x"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_dark_grey"
+            android:fontFamily="@font/fa_solid_900"
+            android:paddingStart="@dimen/padding_x"
+            android:paddingEnd="@dimen/padding_x"
+            android:text="5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/sixButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="@dimen/margin_x"
+            android:layout_marginEnd="@dimen/margin_x"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_dark_grey"
+            android:fontFamily="@font/fa_solid_900"
+            android:paddingStart="@dimen/padding_x"
+            android:paddingEnd="@dimen/padding_x"
+            android:text="6"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+        <Button
+            android:id="@+id/minusButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="@dimen/margin_x"
+            android:layout_marginEnd="@dimen/margin_x"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_orange"
+            android:fontFamily="@font/fa_solid_900"
+            android:paddingStart="@dimen/padding_x"
+            android:paddingEnd="@dimen/padding_x"
+            android:text="@string/minus_icon"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_text_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/secondRowLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,7 +89,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/firstRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdRowLayout">
 
         <Button
             android:id="@+id/oneButton"
