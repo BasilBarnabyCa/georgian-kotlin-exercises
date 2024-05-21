@@ -9,6 +9,33 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/resultRowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="@dimen/margin_x"
+            android:layout_marginEnd="@dimen/margin_x"
+            android:fontFamily="@font/fa_solid_900"
+            android:gravity="end"
+            android:paddingStart="@dimen/padding_y"
+            android:paddingEnd="@dimen/padding_y"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/result_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/fifthRowLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -16,7 +43,7 @@
         app:layout_constraintBottom_toTopOf="@+id/fourthRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/resultRowLayout">
 
         <Button
             android:id="@+id/clearButton"
@@ -25,7 +52,7 @@
             android:layout_marginStart="@dimen/margin_x"
             android:layout_marginEnd="@dimen/margin_x"
             android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
+            android:backgroundTint="@color/bg_light_grey"
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
@@ -88,8 +115,7 @@
         app:layout_constraintBottom_toTopOf="@+id/thirdRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/fifthRowLayout">
 
         <Button
             android:id="@+id/sevenButton"
@@ -161,7 +187,6 @@
         app:layout_constraintBottom_toTopOf="@+id/secondRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fourthRowLayout">
 
         <Button
@@ -234,7 +259,6 @@
         app:layout_constraintBottom_toTopOf="@+id/firstRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thirdRowLayout">
 
         <Button
@@ -307,7 +331,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondRowLayout">
 
         <Button
