@@ -5,4 +5,8 @@
     <string name="welcome_back_string">Welcome back, Basil!</string>
     <string name="login_button_text">Login</string>
     <string name="logout_button_text">Logout</string>
+    <string name ="home_icon">\uf015</string>
+    <string name ="divide_icon">\uf529</string>
+    <string name ="plus_icon">\u002b</string>
+    <string name ="plus_minus_icon">\ue43c</string>
 </resources>

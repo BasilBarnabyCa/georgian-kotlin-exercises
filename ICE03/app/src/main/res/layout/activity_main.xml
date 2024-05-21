@@ -36,7 +36,32 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/divideButton"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bg_secondary"
+                android:fontFamily="@font/fa_solid_900"
+                android:text="@string/divide_icon"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/homeButton"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/button_margin_right"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bg_success"
+                android:fontFamily="@font/fa_solid_900"
+                android:text="@string/home_icon"
+                android:textColor="@color/bg_success_text_color"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/homeButton"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,7 +73,7 @@
                 android:textSize="@dimen/button_text_size" />
 
             <Button
-                android:id="@+id/logoutButton"
+                android:id="@+id/divideButton"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
