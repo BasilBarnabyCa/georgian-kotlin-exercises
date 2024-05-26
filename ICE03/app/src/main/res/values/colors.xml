@@ -12,4 +12,5 @@
     <color name="bg_light_grey">#A4A4A4</color>
     <color name="bg_dark_grey">#333333</color>
     <color name="bg_orange">#FD9D18</color>
+    <color name="bg_dark_red">#320A0A</color>
 </resources>
