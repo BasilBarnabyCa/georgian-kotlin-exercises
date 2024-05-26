@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark_red"
+    android:background="@color/bg_dark_blue"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -23,10 +23,10 @@
         <TextView
             android:id="@+id/resultTextView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/button_size"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin_x"
             android:layout_marginEnd="@dimen/margin_x"
-            android:fontFamily="@font/fa_solid_900"
+            android:fontFamily="@font/lato_bold"
             android:gravity="end"
             android:paddingStart="@dimen/padding_y"
             android:paddingEnd="@dimen/padding_y"
@@ -58,6 +58,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="clear"
             android:text="@string/clear_icon"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
@@ -74,6 +75,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="delete"
             android:text="@string/delete_icon"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
@@ -90,6 +92,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="percent"
             android:text="@string/percent_icon"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
@@ -106,6 +109,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="division"
             android:text="@string/divide_icon"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
@@ -135,6 +139,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="7"
             android:text="@string/seven_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -151,6 +156,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="8"
             android:text="@string/eight_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -167,6 +173,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="9"
             android:text="@string/nine_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -183,6 +190,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="multiplication"
             android:text="@string/multiplication_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -212,6 +220,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="4"
             android:text="@string/four_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -228,6 +237,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="5"
             android:text="@string/five_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -244,6 +254,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="6"
             android:text="@string/six_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -260,6 +271,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="subtraction"
             android:text="@string/minus_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -289,6 +301,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="1"
             android:text="@string/one_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -305,6 +318,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="2"
             android:text="@string/two_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -321,6 +335,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="3"
             android:text="@string/three_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -337,6 +352,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="addition"
             android:text="@string/plus_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -366,6 +382,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="plus_minus"
             android:text="@string/plus_minus_icon"
             android:textColor="@color/black"
             android:textSize="@dimen/button_text_size" />
@@ -382,6 +399,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="0"
             android:text="@string/zero_character"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -398,6 +416,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="."
             android:text="@string/dot_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />
@@ -414,6 +433,7 @@
             android:fontFamily="@font/fa_solid_900"
             android:paddingStart="@dimen/padding_x"
             android:paddingEnd="@dimen/padding_x"
+            android:tag="equals"
             android:text="@string/equals_icon"
             android:textColor="@color/white"
             android:textSize="@dimen/button_text_size" />

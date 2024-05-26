@@ -4,7 +4,7 @@
     <string name="minus_icon">\uf068</string>
     <string name="multiplication_icon">\uf00d</string>
     <string name="divide_icon">\uf529</string>
-    <string name="percent_icon">\uf529</string>
+    <string name="percent_icon">\u0025</string>
     <string name="equals_icon">\u003d</string>
     <string name="dot_icon">"."</string>
     <string name="delete_icon">\uf55a</string>
