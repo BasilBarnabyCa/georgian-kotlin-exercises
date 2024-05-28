@@ -27,6 +27,23 @@ class MainActivity : AppCompatActivity()
             insets
         }
 
+        createButtons()
+
+//        digitButtons.forEach { button ->
+//            button.setOnClickListener {
+//                digitPressHandler(it as Button)
+//            }
+//        }
+//
+//        operationButtons.forEach { button ->
+//            button.setOnClickListener {
+//                operationPressHandler(it as Button)
+//            }
+//        }
+
+    }
+
+    private fun createButtons() {
         val digitButtons = arrayOf(
             binding.oneButton,
             binding.twoButton,
@@ -38,7 +55,8 @@ class MainActivity : AppCompatActivity()
             binding.eightButton,
             binding.nineButton,
             binding.zeroButton,
-            binding.decimalButton
+            binding.decimalButton,
+            binding.plusMinusButton
         )
 
         val operationButtons = arrayOf(
@@ -49,31 +67,30 @@ class MainActivity : AppCompatActivity()
             binding.divideButton,
             binding.percentButton,
             binding.deleteButton,
-            binding.clearButton,
-            binding.plusMinusButton
+            binding.clearButton
         )
 
-        digitButtons.forEach { button ->
-            button.setOnClickListener {
-                digitPressHandler(it as Button)
-            }
-        }
-
-        operationButtons.forEach { button ->
-            button.setOnClickListener {
-                operationPressHandler(it as Button)
-            }
-        }
-
+        digitButtons.forEach { it.setOnClickListener { digitPressHandler(it.tag as String) } }
+        operationButtons.forEach { it.setOnClickListener { operationPressHandler(it.tag as String) } }
     }
 
-    private fun digitPressHandler(button: Button)
+//    private fun digitPressHandler(button: Button)
+//    {
+//        binding.resultTextView.text = button.tag.toString()
+//    }
+//
+//    private fun operationPressHandler(button: Button)
+//    {
+//        binding.resultTextView.text = button.tag.toString()
+//    }
+
+    private fun digitPressHandler(tag: String)
     {
-        binding.resultTextView.text = button.tag.toString()
+        binding.resultTextView.text = tag
     }
 
-    private fun operationPressHandler(button: Button)
+    private fun operationPressHandler(tag: String)
     {
-        binding.resultTextView.text = button.tag.toString()
+        binding.resultTextView.text = tag
     }
 }
