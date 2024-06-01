@@ -49,19 +49,8 @@
         <Button
             android:id="@+id/clearButton"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_light_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
             android:tag="clear"
-            android:text="@string/clear_icon"
-            android:textColor="@color/black"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/clear_icon" />
 
         <Button
             android:id="@+id/deleteButton"
@@ -192,7 +181,7 @@
             android:paddingEnd="@dimen/padding_x"
             android:tag="multiplication"
             android:text="@string/multiplication_icon"
-            android:textColor="@color/white"
+
             android:textSize="@dimen/button_text_size" />
 
     </LinearLayout>
