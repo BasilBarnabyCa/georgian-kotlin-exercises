@@ -48,60 +48,27 @@
 
         <Button
             android:id="@+id/clearButton"
-            style="?android:attr/buttonBarButtonStyle"
+            style="@style/light_grey_button"
             android:tag="clear"
             android:text="@string/clear_icon" />
 
         <Button
             android:id="@+id/deleteButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_light_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/light_grey_button"
             android:tag="delete"
-            android:text="@string/delete_icon"
-            android:textColor="@color/black"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/delete_icon"/>
 
         <Button
             android:id="@+id/percentButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_light_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/light_grey_button"
             android:tag="percent"
-            android:text="@string/percent_icon"
-            android:textColor="@color/black"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/percent_icon"/>
 
         <Button
             android:id="@+id/divideButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_orange"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/operator_button"
             android:tag="division"
-            android:text="@string/divide_icon"
-            android:textColor="@color/black"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/divide_icon" />
 
     </LinearLayout>
 
@@ -118,71 +85,27 @@
 
         <Button
             android:id="@+id/sevenButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="7"
-            android:text="@string/seven_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/seven_icon" />
 
         <Button
             android:id="@+id/eightButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="8"
-            android:text="@string/eight_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/eight_icon"/>
 
         <Button
             android:id="@+id/nineButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="9"
-            android:text="@string/nine_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/nine_icon" />
 
         <Button
             android:id="@+id/multiplicationButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_orange"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/operator_button"
             android:tag="multiplication"
-            android:text="@string/multiplication_icon"
-
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/multiplication_icon" />
 
     </LinearLayout>
 
@@ -199,71 +122,27 @@
 
         <Button
             android:id="@+id/fourButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="4"
-            android:text="@string/four_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/four_icon" />
 
         <Button
             android:id="@+id/fiveButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="5"
-            android:text="@string/five_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/five_icon"/>
 
         <Button
             android:id="@+id/sixButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="6"
-            android:text="@string/six_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/six_icon" />
 
         <Button
             android:id="@+id/minusButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_orange"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/operator_button"
             android:tag="subtraction"
-            android:text="@string/minus_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/minus_icon" />
 
     </LinearLayout>
 
@@ -280,71 +159,27 @@
 
         <Button
             android:id="@+id/oneButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="1"
-            android:text="@string/one_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/one_icon" />
 
         <Button
             android:id="@+id/twoButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="2"
-            android:text="@string/two_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/two_icon" />
 
         <Button
             android:id="@+id/threeButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="3"
-            android:text="@string/three_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/three_icon" />
 
         <Button
             android:id="@+id/plusButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_orange"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/operator_button"
             android:tag="addition"
-            android:text="@string/plus_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/plus_icon" />
 
     </LinearLayout>
 
@@ -361,71 +196,27 @@
 
         <Button
             android:id="@+id/plusMinusButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_light_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="plus_minus"
-            android:text="@string/plus_minus_icon"
-            android:textColor="@color/black"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/plus_minus_icon" />
 
         <Button
             android:id="@+id/zeroButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="0"
-            android:text="@string/zero_character"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/zero_character" />
 
         <Button
             android:id="@+id/decimalButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_dark_grey"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/dark_grey_button"
             android:tag="."
-            android:text="@string/dot_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/dot_icon" />
 
         <Button
             android:id="@+id/equalsButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="@dimen/button_size"
-            android:layout_height="@dimen/button_size"
-            android:layout_marginStart="@dimen/margin_x"
-            android:layout_marginEnd="@dimen/margin_x"
-            android:layout_weight="1"
-            android:backgroundTint="@color/bg_orange"
-            android:fontFamily="@font/fa_solid_900"
-            android:paddingStart="@dimen/padding_x"
-            android:paddingEnd="@dimen/padding_x"
+            style="@style/operator_button"
             android:tag="equals"
-            android:text="@string/equals_icon"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_text_size" />
+            android:text="@string/equals_icon" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
