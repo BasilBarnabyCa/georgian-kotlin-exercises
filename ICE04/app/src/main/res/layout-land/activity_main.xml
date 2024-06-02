@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15">
+        app:layout_constraintVertical_bias="0">
 
 
         <TextView
@@ -32,7 +32,7 @@
             android:paddingEnd="@dimen/padding_y"
             android:text="@string/zero_character"
             android:textColor="@color/white"
-            android:textSize="@dimen/result_text_size" />
+            android:textSize="@dimen/result_text_size_land" />
     </LinearLayout>
 
     <LinearLayout
@@ -40,6 +40,7 @@
         style="?android:attr/buttonBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_x_land"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/fourthRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,13 +57,13 @@
             android:id="@+id/deleteButton"
             style="@style/light_grey_button"
             android:tag="delete"
-            android:text="@string/delete_icon"/>
+            android:text="@string/delete_icon" />
 
         <Button
             android:id="@+id/percentButton"
             style="@style/light_grey_button"
             android:tag="percent"
-            android:text="@string/percent_icon"/>
+            android:text="@string/percent_icon" />
 
         <Button
             android:id="@+id/divideButton"
@@ -77,6 +78,7 @@
         style="?android:attr/buttonBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_x_land"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/thirdRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,6 +116,7 @@
         style="?android:attr/buttonBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_x_land"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/secondRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +154,7 @@
         style="?android:attr/buttonBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_x_land"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/firstRowLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,6 +192,7 @@
         style="?android:attr/buttonBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_x_land"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
