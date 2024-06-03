@@ -215,7 +215,7 @@
             android:id="@+id/decimalButton"
             style="@style/dark_grey_button"
             android:tag="."
-            android:text="@string/dot_icon" />
+            android:text="@string/decimal_icon" />
 
         <Button
             android:id="@+id/equalsButton"

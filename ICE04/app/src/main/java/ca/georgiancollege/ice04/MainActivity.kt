@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity()
             binding.sevenButton,
             binding.eightButton,
             binding.nineButton,
-            binding.zeroButton,
-            binding.decimalButton,
-            binding.plusMinusButton
+            binding.zeroButton
         )
 
         val operationButtons = arrayOf(
@@ -51,22 +49,81 @@ class MainActivity : AppCompatActivity()
             binding.minusButton,
             binding.multiplicationButton,
             binding.divideButton,
-            binding.percentButton,
-            binding.deleteButton,
-            binding.clearButton
+            binding.percentButton
         )
 
         digitButtons.forEach { it.setOnClickListener { digitPressHandler(it.tag as String) } }
-        operationButtons.forEach { it.setOnClickListener { operationPressHandler(it.tag as String) } }
+//        operationButtons.forEach { it.setOnClickListener { operationPressHandler(it.tag as String) } }
+
+        binding.clearButton.setOnClickListener {
+            clearScreen()
+        }
+
+        binding.deleteButton.setOnClickListener {
+            deleteCharacter()
+        }
+
+        binding.decimalButton.setOnClickListener {
+            addDecimal()
+        }
+
+        binding.plusMinusButton.setOnClickListener {
+            togglePlusMinus()
+        }
+
     }
 
     private fun digitPressHandler(tag: String)
     {
-        binding.resultTextView.text = tag
+        val currentValue = binding.resultTextView.text
+        if(binding.resultTextView.text == "0") {
+            binding.resultTextView.text = tag
+        } else {
+            binding.resultTextView.text = String.format("%s%s", currentValue, tag)
+        }
     }
 
     private fun operationPressHandler(tag: String)
     {
         binding.resultTextView.text = tag
+    }
+
+    private fun clearScreen()
+    {
+        binding.resultTextView.text = getString(R.string.zero_character)
+    }
+
+    private fun deleteCharacter()
+    {
+        val currentValue = binding.resultTextView.text
+        if (currentValue != "0" && currentValue.length > 1) {
+            val newValue = currentValue.substring(0, currentValue.length - 1)
+            if (newValue == "-" || newValue == "-0") {
+                binding.resultTextView.text = getString(R.string.zero_character)
+            } else {
+                binding.resultTextView.text= newValue
+            }
+        } else {
+            binding.resultTextView.text = getString(R.string.zero_character)
+        }
+    }
+
+    private fun addDecimal()
+    {
+        val currentValue = binding.resultTextView.text
+        if(!currentValue.contains("."))
+            binding.resultTextView.text = String.format("%s%s", currentValue, getString(R.string.decimal_icon))
+    }
+
+    private fun togglePlusMinus()
+    {
+        val currentValue = binding.resultTextView.text
+        if (currentValue != "0") {
+            if (currentValue.contains("-")) {
+                binding.resultTextView.text = currentValue.substring(1)
+            } else {
+                binding.resultTextView.text = String.format("-%s", currentValue)
+            }
+        }
     }
 }

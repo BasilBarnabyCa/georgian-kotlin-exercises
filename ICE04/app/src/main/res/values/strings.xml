@@ -6,7 +6,7 @@
     <string name="divide_icon">\uf529</string>
     <string name="percent_icon">\u0025</string>
     <string name="equals_icon">\u003d</string>
-    <string name="dot_icon">"."</string>
+    <string name="decimal_icon">"."</string>
     <string name="delete_icon">\uf55a</string>
     <string name="clear_icon">"C"</string>
     <string name="plus_minus_icon">\ue43c</string>
