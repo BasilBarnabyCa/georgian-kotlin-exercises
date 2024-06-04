@@ -1,6 +1,7 @@
 package ca.georgiancollege.ice05
 
 import android.content.Context
+import android.util.Log
 import ca.georgiancollege.ice05.databinding.ActivityMainBinding
 
 class Calculator (private val context:Context, dataBinding: ActivityMainBinding){
@@ -9,7 +10,7 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
     private var result: String
 
     init {
-        result = ""
+        result = "0"
         createButtons()
     }
 
@@ -25,6 +26,7 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
             binding.eightButton,
             binding.nineButton,
             binding.zeroButton,
+            binding.decimalButton,
             binding.clearButton,
             binding.deleteButton,
             binding.plusMinusButton
@@ -45,19 +47,6 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
         binding.clearButton.setOnClickListener {
             clearScreen()
         }
-
-        binding.deleteButton.setOnClickListener {
-            deleteCharacter()
-        }
-
-//        binding.decimalButton.setOnClickListener {
-//            addDecimal()
-//        }
-
-        binding.plusMinusButton.setOnClickListener {
-            togglePlusMinus()
-        }
-
     }
 
     private fun operandPressHandler(tag: String) {
@@ -72,11 +61,27 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
             }
             "delete" -> {
                 result = result.dropLast(1)
-                binding.resultTextView.text = if(result.isEmpty()) "0" else result
+                binding.resultTextView.text = if(result.isEmpty() || result == "-") "0" else result
+                result = if(result.isEmpty()) "0" else result
             }
-            "plus_minus" -> {}
+            "plus_minus" -> {
+                if(result.startsWith("-"))
+                {
+                    result = result.substring(1)
+                }
+                else
+                {
+                    if(result.isNotEmpty() && result != "0")
+                    {
+                        result = "-".plus(result)
+                    }
+                }
+                binding.resultTextView.text = result
+            }
+             "clear" -> {
+                 clearScreen()
+             }
             else -> {
-
                 if(binding.resultTextView.text == "0")
                 {
                     result = tag
@@ -98,7 +103,8 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
 
     private fun clearScreen()
     {
-        binding.resultTextView.text = context.getString(R.string.zero_character)
+        result = "0"
+        binding.resultTextView.text = "0"
     }
 
     private fun deleteCharacter()
