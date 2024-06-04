@@ -6,8 +6,10 @@ import ca.georgiancollege.ice05.databinding.ActivityMainBinding
 class Calculator (private val context:Context, dataBinding: ActivityMainBinding){
 
     private var binding: ActivityMainBinding = dataBinding
+    private var result: String
 
     init {
+        result = ""
         createButtons()
     }
 
@@ -22,7 +24,10 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
             binding.sevenButton,
             binding.eightButton,
             binding.nineButton,
-            binding.zeroButton
+            binding.zeroButton,
+            binding.clearButton,
+            binding.deleteButton,
+            binding.plusMinusButton
         )
 
         val operationButtons = arrayOf(
@@ -55,14 +60,28 @@ class Calculator (private val context:Context, dataBinding: ActivityMainBinding)
 
     }
 
-    private fun digitPressHandler(tag: String)
+    private fun digitPressHandler(tag: String) = when(tag)
     {
-        val currentValue = binding.resultTextView.text
-        if(binding.resultTextView.text == "0") {
-            binding.resultTextView.text = tag
-        } else {
-            binding.resultTextView.text = String.format("%s%s", currentValue, tag)
+        "." -> {}
+        "delete" -> {}
+        "plus_minus" -> {}
+        else -> {
+            if(binding.resultTextView.text == "0")
+            {
+                binding.resultTextView.text = tag
+            } else {
+                result += tag
+                binding.resultTextView.text = result
+            }
         }
+
+
+//        val currentValue = binding.resultTextView.text
+//        if(binding.resultTextView.text == "0") {
+//            binding.resultTextView.text = tag
+//        } else {
+//            binding.resultTextView.text = String.format("%s%s", currentValue, tag)
+//        }
     }
 
     private fun operationPressHandler(tag: String)
