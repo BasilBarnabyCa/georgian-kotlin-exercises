@@ -26,6 +26,6 @@ class MainActivity : AppCompatActivity()
             insets
         }
 
-        val calculator = Calculator(this, binding)
+        val calculator = Calculator(binding)
     }
 }
