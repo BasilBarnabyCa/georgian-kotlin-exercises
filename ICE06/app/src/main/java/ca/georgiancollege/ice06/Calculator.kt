@@ -6,9 +6,13 @@ class Calculator(dataBinding: ActivityMainBinding) {
 
     private var binding: ActivityMainBinding = dataBinding
     private var result: String
+    private var currentOperand: String
+    private var currentOperator: String
 
     init {
         result = "0"
+        currentOperand = ""
+        currentOperator = ""
         createButtons()
     }
 
@@ -79,8 +83,44 @@ class Calculator(dataBinding: ActivityMainBinding) {
         }
     }
 
+    private fun operatorPressHandler(tag: String) {
+
+        if (tag != "clear") {
+            if(currentOperand.isNotEmpty()) {
+                // perform last operation
+                when(currentOperator) {
+                    "plus" -> {
+                        add()
+                    }
+                }
+
+            } else {
+                currentOperand = binding.resultTextView.text.toString()
+                result = ""
+                binding.resultTextView.text = ""
+            }
+            currentOperator = tag
+        } else {
+            clearScreen()
+        }
+    }
+
+    private fun add() {
+        //Detect if float or int
+        if(currentOperand.contains(".") || result.contains(".")) {
+//            result = currentOperand.toFloat().plus(result.toFloat()).toString()
+            result = (currentOperand.toFloat() + result.toFloat()).toString()
+        } else  {
+            result = (currentOperand.toFloat() + result.toFloat()).toString()
+        }
+        // TODO: Remove .0 if the result should be an int
+        binding.resultTextView.text = result
+    }
+
     private fun clearScreen() {
         result = "0"
+        currentOperand = ""
+        currentOperator = ""
         binding.resultTextView.text = "0"
     }
 }

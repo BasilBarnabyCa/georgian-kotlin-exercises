@@ -33,11 +33,14 @@ class MainActivity : AppCompatActivity() {
 
         val calculator = Calculator(binding)
 
+        /**
+         * For testing DataManager
         Log.i("onCreateRaw", DataManager.instance.getTextFromResource(this, R.raw.contacts))
         Log.i("onCreateAssets", DataManager.instance.getTextFromAsset(this, "contacts.json"))
 
         for (contact in DataManager.instance.deserializeJSON(this)!!) {
             Log.i("onCreateJSON", contact.toString())
         }
+        */
     }
 }
