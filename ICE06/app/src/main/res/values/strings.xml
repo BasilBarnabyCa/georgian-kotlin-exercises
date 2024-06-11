@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ICE06</string>
+    <string name="plus_icon">\u002b</string>
+    <string name="minus_icon">\uf068</string>
+    <string name="multiplication_icon">\uf00d</string>
+    <string name="divide_icon">\uf529</string>
+    <string name="percent_icon">\u0025</string>
+    <string name="equals_icon">\u003d</string>
+    <string name="decimal_icon">"."</string>
+    <string name="delete_icon">\uf55a</string>
+    <string name="clear_icon">"C"</string>
+    <string name="plus_minus_icon">\ue43c</string>
+    <string name="one_icon">"1"</string>
+    <string name="two_icon">"2"</string>
+    <string name="three_icon">"3"</string>
+    <string name="four_icon">"4"</string>
+    <string name="five_icon">"5"</string>
+    <string name="six_icon">"6"</string>
+    <string name="seven_icon">"7"</string>
+    <string name="eight_icon">"8"</string>
+    <string name="nine_icon">"9"</string>
+    <string name="zero_character">"0"</string>
+</resources>
