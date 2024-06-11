@@ -2,7 +2,7 @@ package ca.georgiancollege.ice06
 
 import ca.georgiancollege.ice06.databinding.ActivityMainBinding
 
-class Calculator (dataBinding: ActivityMainBinding){
+class Calculator(dataBinding: ActivityMainBinding) {
 
     private var binding: ActivityMainBinding = dataBinding
     private var result: String
@@ -38,45 +38,40 @@ class Calculator (dataBinding: ActivityMainBinding){
     }
 
     private fun operandPressHandler(tag: String) {
-        when(tag)
-        {
+        when (tag) {
             "." -> {
-                if(!binding.resultTextView.text.contains("."))
-                {
-                    result += if(result.isEmpty()) "0." else "."
+                if (!binding.resultTextView.text.contains(".")) {
+                    result += if (result.isEmpty()) "0." else "."
                     binding.resultTextView.text = result
                 }
             }
+
             "delete" -> {
                 result = result.dropLast(1)
-                binding.resultTextView.text = if(result.isEmpty() || result == "-") "0" else result
-                result = if(result.isEmpty()) "0" else result
+                binding.resultTextView.text = if (result.isEmpty() || result == "-") "0" else result
+                result = if (result.isEmpty()) "0" else result
             }
+
             "plus_minus" -> {
-                if(result.startsWith("-"))
-                {
+                if (result.startsWith("-")) {
                     result = result.substring(1)
-                }
-                else
-                {
-                    if(result.isNotEmpty() && result != "0")
-                    {
+                } else {
+                    if (result.isNotEmpty() && result != "0") {
                         result = "-".plus(result)
                     }
                 }
                 binding.resultTextView.text = result
             }
-             "clear" -> {
-                 clearScreen()
-             }
+
+            "clear" -> {
+                clearScreen()
+            }
+
             else -> {
-                if(binding.resultTextView.text == "0")
-                {
+                if (binding.resultTextView.text == "0") {
                     result = tag
                     binding.resultTextView.text = result
-                }
-                else
-                {
+                } else {
                     result += tag
                     binding.resultTextView.text = result
                 }
@@ -84,8 +79,7 @@ class Calculator (dataBinding: ActivityMainBinding){
         }
     }
 
-    private fun clearScreen()
-    {
+    private fun clearScreen() {
         result = "0"
         binding.resultTextView.text = "0"
     }
