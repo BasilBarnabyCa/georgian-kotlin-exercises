@@ -1,5 +1,6 @@
 package ca.georgiancollege.ice06
 
+import android.util.Log
 import ca.georgiancollege.ice06.databinding.ActivityMainBinding
 
 class Calculator(dataBinding: ActivityMainBinding) {
@@ -34,7 +35,16 @@ class Calculator(dataBinding: ActivityMainBinding) {
             binding.plusMinusButton
         )
 
+        val operatorButtons = arrayOf(
+            binding.plusButton,
+            binding.minusButton,
+            binding.multiplicationButton,
+            binding.divideButton,
+            binding.equalsButton
+        )
+
         operandButtons.forEach { it.setOnClickListener { operandPressHandler(it.tag as String) } }
+        operatorButtons.forEach { it.setOnClickListener { operatorPressHandler(it.tag as String) } }
 
         binding.clearButton.setOnClickListener {
             clearScreen()
@@ -84,43 +94,64 @@ class Calculator(dataBinding: ActivityMainBinding) {
     }
 
     private fun operatorPressHandler(tag: String) {
-
-        if (tag != "clear") {
-            if(currentOperand.isNotEmpty()) {
-                // perform last operation
-                when(currentOperator) {
-                    "plus" -> {
-                        add()
-                    }
-                }
-
-            } else {
-                currentOperand = binding.resultTextView.text.toString()
-                result = ""
-                binding.resultTextView.text = ""
+        if (currentOperator.isNotEmpty() && result.isNotEmpty()) {
+            when (currentOperator) {
+                "addition" -> add()
+                "subtraction" -> subtract()
+                "multiplication" -> multiply()
+                "division" -> divide()
             }
-            currentOperator = tag
         } else {
-            clearScreen()
+            currentOperand = binding.resultTextView.text.toString()
         }
-    }
 
-    private fun add() {
-        //Detect if float or int
-        if(currentOperand.contains(".") || result.contains(".")) {
-//            result = currentOperand.toFloat().plus(result.toFloat()).toString()
-            result = (currentOperand.toFloat() + result.toFloat()).toString()
-        } else  {
-            result = (currentOperand.toFloat() + result.toFloat()).toString()
+        if (tag == "equals") {
+            showAnswer()
+        } else {
+            currentOperator = tag
+            result = "0"
+            binding.resultTextView.text = "0"
         }
-        // TODO: Remove .0 if the result should be an int
-        binding.resultTextView.text = result
     }
 
     private fun clearScreen() {
         result = "0"
+        binding.resultTextView.text = "0"
+        currentOperator = ""
+        currentOperand = ""
+    }
+
+    private fun add() {
+        val answer = currentOperand.toDouble() + result.toDouble()
+        currentOperand = formatAnswer(answer)
+    }
+
+    private fun subtract() {
+        val answer = currentOperand.toDouble() - result.toDouble()
+        currentOperand = formatAnswer(answer)
+    }
+
+    private fun multiply()
+    {
+        val answer = currentOperand.toDouble() * result.toDouble()
+        currentOperand = formatAnswer(answer)
+    }
+
+    private fun divide()
+    {
+        val answer = currentOperand.toDouble() / result.toDouble()
+        currentOperand = formatAnswer(answer)
+    }
+
+    private fun showAnswer()
+    {
+        binding.resultTextView.text = currentOperand
         currentOperand = ""
         currentOperator = ""
-        binding.resultTextView.text = "0"
+    }
+
+    private fun formatAnswer(answer: Double): String
+    {
+       return if (answer % 1 == 0.0) answer.toInt().toString() else answer.toString()
     }
 }
