@@ -5,10 +5,12 @@
     android:layout_marginLeft="@dimen/margin_medium"
     android:layout_marginRight="@dimen/margin_medium"
     android:gravity="center_vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -17,6 +19,7 @@
             android:text="@string/title_text"
             android:textSize="@dimen/CellTextSize"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/subTitle"
             android:layout_width="match_parent"
@@ -24,5 +27,12 @@
             android:layout_marginStart="@dimen/CellMargin"
             android:text="@string/subtitle_text"
             android:textColor="@color/subTitle_blue" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
     </LinearLayout>
+
 </FrameLayout>

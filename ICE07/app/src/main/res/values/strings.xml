@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">ICE07</string>
-    <string name="title_text">Title Text\n</string>
-    <string name="subtitle_text">Subtitle Text</string>
+    <string name="title_text">Title</string>
+    <string name="subtitle_text">Subtitle</string>
 </resources>
