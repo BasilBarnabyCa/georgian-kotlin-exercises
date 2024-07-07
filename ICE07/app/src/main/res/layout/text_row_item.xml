@@ -27,10 +27,4 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/rating_text_size"
         android:text="@string/rating" />
-
-    <!--        <View-->
-    <!--            android:id="@+id/divider"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="1dp"-->
-    <!--            android:background="?android:attr/listDivider" />-->
 </LinearLayout>
