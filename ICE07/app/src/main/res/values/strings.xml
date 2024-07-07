@@ -7,4 +7,8 @@
     <string name="enter_tv_show_title_hint">Enter TV Show Title</string>
     <string name="enter_tv_show_genre_hint">Enter TV Show Genre</string>
     <string name="enter_tv_show_rating_hint">Enter TV Show Rating</string>
+    <string name="add_tv_show_button_text">Add Tv Show</string>
+    <string name="save_button_text">Save</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="cancel_button_text">Cancel</string>
 </resources>

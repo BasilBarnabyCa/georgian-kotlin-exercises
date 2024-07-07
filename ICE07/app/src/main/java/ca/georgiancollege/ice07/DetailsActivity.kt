@@ -3,6 +3,7 @@ package ca.georgiancollege.ice07
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import ca.georgiancollege.ice07.databinding.ActivityDetailsBinding
 import kotlinx.coroutines.CoroutineScope
@@ -38,7 +39,7 @@ class DetailsActivity : AppCompatActivity() {
         }
 
         binding.deleteButton.setOnClickListener {
-            // deleteTVShow()
+            deleteTVShow()
         }
 
         binding.cancelButton.setOnClickListener {
@@ -64,12 +65,13 @@ class DetailsActivity : AppCompatActivity() {
         val genre = binding.genreEditText.text.toString()
         val rating = binding.ratingEditText.text.toString().toDoubleOrNull() ?: 0.0
 
-        if(title.isNotEmpty() && genre.isNotEmpty()) {
+        if (title.isNotEmpty() && genre.isNotEmpty()) {
             val tvShow = TVShow(
                 id = tvShowId ?: 0,
                 title = title,
                 genre = genre,
-                rating = rating)
+                rating = rating
+            )
 
             CoroutineScope(Dispatchers.Main).launch {
                 if (tvShowId == null) {
@@ -77,12 +79,37 @@ class DetailsActivity : AppCompatActivity() {
                     Toast.makeText(this@DetailsActivity, "TV Show Added", Toast.LENGTH_SHORT).show()
                 } else {
                     dataManager.update(tvShow)
-                    Toast.makeText(this@DetailsActivity, "TV Show Updated", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@DetailsActivity, "TV Show Updated", Toast.LENGTH_SHORT)
+                        .show()
                 }
                 finish()
             }
         } else {
             Toast.makeText(this, "Title and genre is required", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun deleteTVShow() {
+        tvShowId?.let { id ->
+            AlertDialog.Builder(this)
+                .setTitle("Delete TV Show")
+                .setMessage("Are you sure you want to delete this TV show")
+                .setPositiveButton("Yes") { _, _ ->
+                    CoroutineScope(Dispatchers.Main).launch {
+                        val tvShow = dataManager.getTVShowById(id)
+                        tvShow?.let {
+                            dataManager.delete(tvShow)
+                            Toast.makeText(
+                                this@DetailsActivity,
+                                "TV Show Deleted",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            finish()
+                        }
+                    }
+                }
+                .setNegativeButton("No", null)
+                .show()
         }
     }
 }
