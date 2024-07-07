@@ -3,30 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/layout_padding">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_text"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        android:text="@string/title_text" />
 
     <TextView
         android:id="@+id/genre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16sp"
-        android:textStyle="bold"
-        android:text="@string/genre"
-        android:textColor="@color/subTitle_blue" />
+        android:textSize="@dimen/genre_text_size"
+        android:textColor="@color/genre_text_color"
+        android:text="@string/genre" />
 
     <TextView
         android:id="@+id/rating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14sp"
+        android:textSize="@dimen/rating_text_size"
         android:text="@string/rating" />
 
     <!--        <View-->
