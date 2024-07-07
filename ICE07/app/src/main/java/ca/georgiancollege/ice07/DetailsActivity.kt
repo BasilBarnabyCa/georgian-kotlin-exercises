@@ -93,7 +93,7 @@ class DetailsActivity : AppCompatActivity() {
         tvShowId?.let { id ->
             AlertDialog.Builder(this)
                 .setTitle("Delete TV Show")
-                .setMessage("Are you sure you want to delete this TV show")
+                .setMessage("Are you sure you want to delete this TV show?")
                 .setPositiveButton("Yes") { _, _ ->
                     CoroutineScope(Dispatchers.Main).launch {
                         val tvShow = dataManager.getTVShowById(id)
@@ -101,7 +101,7 @@ class DetailsActivity : AppCompatActivity() {
                             dataManager.delete(tvShow)
                             Toast.makeText(
                                 this@DetailsActivity,
-                                "TV Show Deleted",
+                                "TV Show Deleted!",
                                 Toast.LENGTH_SHORT
                             ).show()
                             finish()
