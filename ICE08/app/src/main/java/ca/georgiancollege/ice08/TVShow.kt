@@ -2,6 +2,8 @@ package ca.georgiancollege.ice08
 
 import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.IgnoreExtraProperties
+
+// Data class for Firestore document
 @IgnoreExtraProperties
 data class TVShow(
     @DocumentId val id: String = "",
