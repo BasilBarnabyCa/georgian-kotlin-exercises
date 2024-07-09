@@ -12,4 +12,5 @@
     <string name="save_button_text">Save</string>
     <string name="delete_button_text">Delete</string>
     <string name="cancel_button_text">Cancel</string>
+    <string name="add_a_movie_description">Add a Movie</string>
 </resources>
