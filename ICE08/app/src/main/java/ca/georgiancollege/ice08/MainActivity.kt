@@ -2,15 +2,17 @@ package ca.georgiancollege.ice08
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import ca.georgiancollege.ice08.databinding.ActivityMainBinding
-import kotlinx.coroutines.launch
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val viewModel: TVShowViewModel by viewModels()
 
     private lateinit var dataManager: DataManager
 
@@ -27,46 +29,30 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        dataManager = DataManager.instance(this)
+        // Initialize our Firestore and DataManager
+        FirebaseFirestore.setLoggingEnabled(true)
+        dataManager = DataManager.instance()
 
         binding.firstRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.firstRecyclerView.adapter = adapter
 
-        loadTVShows()
+        // Observe the LiveData from the ViewModel
+        viewModel.tvShows.observe(this) { tvShows ->
+            adapter.submitList(tvShows)
+        }
 
+        // Load all TV Shows from the database manager via viewModel
+        viewModel.loadAllTVShows()
+
+        // TODO: Replace the add button with a floating action button (FAB)
         binding.addButton.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
             startActivity(intent)
         }
-
-
-
-//        // create an array of TV shows (mock data)
-//        val favouriteTVShows = arrayOf(
-//            TVShow("House of the Dragon", "HBO"),
-//            TVShow("Lord of the Rings", "Prime Video"),
-//            TVShow("Andor", "Disney"),
-//            TVShow("Severance", "AppleTv"),
-//            TVShow("Star Trek: Strange New Worlds", "Paramount+")
-//        )
-//
-//        // create an instance of the FirstAdapter and pass in the array of TV shows
-//        val firstAdapter = FirstAdapter(favouriteTVShows)
-//        binding.firstRecyclerView.apply {
-//            layoutManager = LinearLayoutManager(context)
-//            adapter = firstAdapter
-//        }
     }
 
     override fun onResume() {
         super.onResume()
-        loadTVShows()
-    }
-
-    private fun loadTVShows() {
-       lifecycleScope.launch {
-           val tvShows = dataManager.getAllTvVShows()
-           adapter.submitList(tvShows)
-       }
+        viewModel.loadAllTVShows()
     }
 }
