@@ -18,7 +18,7 @@ class DataManager private constructor()
         @Volatile
         private var m_instance: DataManager? = null
 
-        fun instance(context: Context): DataManager
+        fun instance(): DataManager
         {
             if(m_instance == null)
             {
@@ -63,7 +63,7 @@ class DataManager private constructor()
     }
 
     // Get all TV Shows from Firestore
-    suspend fun getAllTvVShows() : List<TVShow> {
+    suspend fun getAllTVShows() : List<TVShow> {
        return try {
            val tvShows = db.collection("tvShows").get().await()
            tvShows?.toObjects(TVShow::class.java) ?: emptyList()
