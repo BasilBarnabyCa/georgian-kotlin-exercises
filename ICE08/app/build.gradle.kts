@@ -44,6 +44,10 @@ android {
 
 dependencies {
 
+    val lifecycleVersion = "2.8.3"
+    val firebaseVersion = "33.1.1"
+    val activityVersion = "1.9.0"
+
     // UI frameworks
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -52,11 +56,18 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     // Import the Firebase BoM and dependencies
-    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation(platform("com.google.firebase:firebase-bom:$firebaseVersion"))
 
     // Declare the dependency for the Cloud Firestore library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-firestore")
+
+    // Import ViewModel utilities for KTX
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+    // Activity utilities for ktx
+    implementation("androidx.activity:activity-ktx:$activityVersion")
 
     // Testing frameworks
     testImplementation(libs.junit)
