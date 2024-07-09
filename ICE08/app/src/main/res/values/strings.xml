@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ICE08</string>
+    <string name="app_title_text">Rotten Potatoes</string>
+    <string name="title_text">Title</string>
+    <string name="genre">Genre</string>
+    <string name="rating">Rating</string>
+    <string name="details_title_text">TV Show Details</string>
+    <string name="enter_tv_show_title_hint">Title</string>
+    <string name="enter_tv_show_genre_hint">Genre</string>
+    <string name="enter_tv_show_rating_hint">Rating</string>
+    <string name="add_tv_show_button_text">Add TV Show</string>
+    <string name="save_button_text">Save</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="cancel_button_text">Cancel</string>
+</resources>
