@@ -63,7 +63,9 @@
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add"
+        app:srcCompat="@drawable/add_fav_icon"
+        android:backgroundTint="@color/add_button_color"
+        app:tint="@null"
         tools:ignore="SpeakableTextPresentCheck"
         android:contentDescription="@string/add_a_movie_description" />
 

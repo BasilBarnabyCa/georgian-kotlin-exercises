@@ -49,6 +49,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DetailsActivity::class.java)
             startActivity(intent)
         }
+
+        // Floating Action Button (FAB) to add a new TV Show
+        binding.addMovieFAB.setOnClickListener {
+            val intent = Intent(this, DetailsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
