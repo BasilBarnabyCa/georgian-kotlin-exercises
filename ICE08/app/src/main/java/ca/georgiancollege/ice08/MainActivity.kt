@@ -45,10 +45,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.loadAllTVShows()
 
         // TODO: Replace the add button with a floating action button (FAB)
-        binding.addButton.setOnClickListener {
-            val intent = Intent(this, DetailsActivity::class.java)
-            startActivity(intent)
-        }
+//        binding.addButton.setOnClickListener {
+//            val intent = Intent(this, DetailsActivity::class.java)
+//            startActivity(intent)
+//        }
 
         // Floating Action Button (FAB) to add a new TV Show
         binding.addMovieFAB.setOnClickListener {
