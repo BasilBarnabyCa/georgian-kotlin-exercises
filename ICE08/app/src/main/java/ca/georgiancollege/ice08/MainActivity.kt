@@ -44,12 +44,6 @@ class MainActivity : AppCompatActivity() {
         // Load all TV Shows from the database manager via viewModel
         viewModel.loadAllTVShows()
 
-        // TODO: Replace the add button with a floating action button (FAB)
-//        binding.addButton.setOnClickListener {
-//            val intent = Intent(this, DetailsActivity::class.java)
-//            startActivity(intent)
-//        }
-
         // Floating Action Button (FAB) to add a new TV Show
         binding.addMovieFAB.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
