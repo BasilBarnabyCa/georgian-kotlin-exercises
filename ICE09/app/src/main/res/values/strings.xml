@@ -18,7 +18,7 @@
     <string name="password_hint_text">Password</string>
     <string name="no_account_text">No Account?</string>
     <string name="register_here_button_text">Register Here</string>
-    <string name="user_registration_text">User Registration</string>
+    <string name="user_registration_title_text">User Registration</string>
     <string name="enter_first_name_text">Enter First Name</string>
     <string name="enter_last_name_text">Enter Last Name</string>
     <string name="enter_email_text">Enter Email</string>

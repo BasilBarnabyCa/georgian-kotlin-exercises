@@ -83,4 +83,26 @@ class DataManager private constructor()
         }
     }
 
+    // User CRUD operations
+    // Add User to Firestore
+    suspend fun insertUser(user: User)  {
+        try {
+            db.collection("users").document(user.id).set(user).await()
+        }
+        catch (e: Exception) {s
+            Log.e(TAG, "Error inserting User: ${e.message}", e)
+        }
+    }
+
+    // Get User by ID from Firestore
+    suspend fun getUserById(id: String) : User? {
+        return try {
+            val user = db.collection("users").document(id).get().await()
+            user?.toObject(User::class.java)
+        } catch (e: Exception) {
+            Log.e(TAG, "Error getting User with id ${id}: ${e.message}", e)
+            null
+        }
+    }
+
 }
