@@ -2,6 +2,7 @@ package ca.georgiancollege.ice09
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -48,7 +49,8 @@ class RegisterActivity : AppCompatActivity() {
                                startActivity(Intent(this, LoginActivity::class.java))
                                finish()
                            } else {
-                               Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                               Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                               Log.e("RegisterActivity", "Registration failed", task.exception)
                            }
                        }
                 } else {

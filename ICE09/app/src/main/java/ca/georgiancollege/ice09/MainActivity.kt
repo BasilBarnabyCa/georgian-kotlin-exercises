@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import ca.georgiancollege.ice09.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: TVShowViewModel by viewModels()
 
     private lateinit var dataManager: DataManager
+
+    private lateinit var auth: FirebaseAuth
 
     // Adapter for the RecyclerView, with a click listener to open the DetailsActivity
     private val adapter = TVShowListAdapter {tvShow: TVShow ->
@@ -28,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance()
 
         // Initialize our Firestore and DataManager
         FirebaseFirestore.setLoggingEnabled(true)
@@ -48,6 +54,12 @@ class MainActivity : AppCompatActivity() {
         binding.addMovieFAB.setOnClickListener {
             val intent = Intent(this, DetailsActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.logoutButton.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 
