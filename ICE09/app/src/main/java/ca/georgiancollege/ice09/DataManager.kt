@@ -89,7 +89,7 @@ class DataManager private constructor()
         try {
             db.collection("users").document(user.id).set(user).await()
         }
-        catch (e: Exception) {s
+        catch (e: Exception) {
             Log.e(TAG, "Error inserting User: ${e.message}", e)
         }
     }

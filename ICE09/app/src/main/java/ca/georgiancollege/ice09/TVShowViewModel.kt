@@ -12,6 +12,9 @@ class TVShowViewModel : ViewModel() {
     private val m_tvShow = MutableLiveData<TVShow?>()
     val tvShow: LiveData<TVShow?> get() = m_tvShow
 
+    private val m_user = MutableLiveData<User?>()
+    val user: LiveData<User?> get() = m_user
+
     // Load all TV Shows from the database manager
     fun loadAllTVShows() {
         viewModelScope.launch {
@@ -43,6 +46,20 @@ class TVShowViewModel : ViewModel() {
         viewModelScope.launch {
             dataManager.delete(tvShow)
             loadAllTVShows()
+        }
+    }
+
+    // Insert User
+    fun insertUser(user: User) {
+        viewModelScope.launch {
+            dataManager.insertUser(user)
+        }
+    }
+
+    // Load User by id
+    fun loadUserById(id: String) {
+        viewModelScope.launch {
+            m_user.value = dataManager.getUserById(id)
         }
     }
 }
