@@ -13,11 +13,11 @@
     <string name="delete_button_text">Delete</string>
     <string name="cancel_button_text">Cancel</string>
     <string name="add_a_movie_description">Add a Movie</string>
-    <string name="login_text">Login</string>
-    <string name="email_address_text">Email Address</string>
-    <string name="password_text">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="email_address_hint_text">Email Address</string>
+    <string name="password_hint_text">Password</string>
     <string name="no_account_text">No Account?</string>
-    <string name="register_here_text">Register Here</string>
+    <string name="register_here_button_text">Register Here</string>
     <string name="user_registration_text">User Registration</string>
     <string name="enter_first_name_text">Enter First Name</string>
     <string name="enter_last_name_text">Enter Last Name</string>
