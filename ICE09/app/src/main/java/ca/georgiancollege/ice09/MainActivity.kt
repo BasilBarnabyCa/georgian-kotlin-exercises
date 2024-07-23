@@ -2,6 +2,9 @@ package ca.georgiancollege.ice09
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,6 +22,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    // Timer for inactivity in seconds
+    private val timer: Int = 10
+
+    // Handler and Runnable for the inactivity timer
+    private val inactivityHandler = Handler(Looper.getMainLooper())
+    private val inactivityRunnable = Runnable {
+        auth.signOut()
+        Toast.makeText(this, "Session timed out", Toast.LENGTH_SHORT).show()
+    }
+
     // Adapter for the RecyclerView, with a click listener to open the DetailsActivity
     private val adapter = TVShowListAdapter {tvShow: TVShow ->
         val intent = Intent(this, DetailsActivity::class.java).apply {
@@ -34,6 +47,11 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
+
+        if (auth.currentUser == null) {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
 
         // Initialize our Firestore and DataManager
         FirebaseFirestore.setLoggingEnabled(true)
@@ -52,8 +70,13 @@ class MainActivity : AppCompatActivity() {
 
         // Floating Action Button (FAB) to add a new TV Show
         binding.addMovieFAB.setOnClickListener {
-            val intent = Intent(this, DetailsActivity::class.java)
-            startActivity(intent)
+            if (auth.currentUser != null) {
+                val intent = Intent(this, DetailsActivity::class.java)
+                startActivity(intent)
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }
         }
 
         binding.logoutButton.setOnClickListener {
@@ -61,10 +84,29 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+
+        // Start the inactivity timer
+        resetInactivityTimer()
     }
 
     override fun onResume() {
         super.onResume()
+        resetInactivityTimer()
         viewModel.loadAllTVShows()
+    }
+
+    override fun onUserInteraction() {
+        super.onUserInteraction()
+        resetInactivityTimer()
+    }
+
+    private fun resetInactivityTimer() {
+        inactivityHandler.removeCallbacks(inactivityRunnable)
+        inactivityHandler.postDelayed(inactivityRunnable, timer * 1000L)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        inactivityHandler.removeCallbacks(inactivityRunnable)
     }
 }
