@@ -5,10 +5,12 @@ public class PlayerBehaviour : MonoBehaviour
     public float max;
     public float min;
     public float horizontalSpeed;
+    public float verticalPosition;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        transform.position = new Vector3(0.0f, verticalPosition, 0.0f);
     }
 
     // Update is called once per frame
@@ -20,8 +22,20 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Move()
     {
+        /**
         var x = Input.GetAxisRaw("Horizontal") * horizontalSpeed * Time.deltaTime;
         transform.position += new Vector3(x, 0.0f, 0.0f);
+        */
+
+        if (Input.touchCount > 0)
+        {
+            var x = Input.touches[0].position.x;
+            var horizontalPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, 0.0f, 0.0f)).x;
+            // print(horizontalPosition);
+
+            transform.position = new Vector3(horizontalPosition, verticalPosition, 0.0f);
+        }
+           
     }
 
     void CheckBounds()

@@ -313,6 +313,7 @@ MonoBehaviour:
   max: 1.79
   min: -1.78
   horizontalSpeed: 10
+  verticalPosition: -4
 --- !u!1001 &6786870646076811447
 PrefabInstance:
   m_ObjectHideFlags: 0
