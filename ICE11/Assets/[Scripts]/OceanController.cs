@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class OceanController : MonoBehaviour
 {
-    public float max;
-    public float min;
+    public Boundary boundary;
     public float verticalSpeed;
 
 
@@ -22,7 +21,7 @@ public class OceanController : MonoBehaviour
 
     void ResetGameObject()
     {
-        transform.position = new Vector3(0.0f, max, 0.0f);
+        transform.position = new Vector3(0.0f, boundary.max, 0.0f);
     }
 
     void Move()
@@ -32,7 +31,7 @@ public class OceanController : MonoBehaviour
 
     void CheckBounds()
     {
-        if (transform.position.y <= min) { 
+        if (transform.position.y <= boundary.min) { 
             ResetGameObject();
         }
     }
