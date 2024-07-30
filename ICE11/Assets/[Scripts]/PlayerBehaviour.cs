@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
+    [Header("Movement Properties")]
     public float max;
     public float min;
     public float horizontalSpeed;
     public float verticalPosition;
+
+    [Header("Audio Properties")]
+    public AudioSource yaySound;
+    public AudioSource thunderSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
