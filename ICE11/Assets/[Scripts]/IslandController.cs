@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public class OceanController : MonoBehaviour
+public class IslandController : MonoBehaviour
 {
-    public float max;
-    public float min;
+    public float minVertical;
+    public float maxVertical;
+    public float minHorizontal;
+    public float maxHorizontal;
     public float verticalSpeed;
 
 
@@ -22,7 +24,8 @@ public class OceanController : MonoBehaviour
 
     void ResetGameObject()
     {
-        transform.position = new Vector3(0.0f, max, 0.0f);
+        var randomXPosition = Random.Range(minHorizontal, maxHorizontal);
+        transform.position = new Vector3(randomXPosition, maxVertical, 0.0f);
     }
 
     void Move()
@@ -32,7 +35,8 @@ public class OceanController : MonoBehaviour
 
     void CheckBounds()
     {
-        if (transform.position.y <= min) { 
+        if (transform.position.y <= minHorizontal)
+        {
             ResetGameObject();
         }
     }
