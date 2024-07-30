@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AdaptivePerformance.VisualScripting;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -52,5 +53,18 @@ public class PlayerBehaviour : MonoBehaviour
         else if (transform.position.x >= max) {
             transform.position = new Vector3(max, transform.position.y, 0.0f);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Island"))
+        {
+            yaySound.Play();
+        }
+        else if(collision.gameObject.CompareTag("Cloud")) 
+        { 
+            thunderSound.Play();
+        }
+        
     }
 }
