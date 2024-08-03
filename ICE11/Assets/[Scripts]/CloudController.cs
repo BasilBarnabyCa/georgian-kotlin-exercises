@@ -3,12 +3,9 @@ using UnityEngine;
 public class CloudController : MonoBehaviour
 {
     [Header("Movement Properties")]
-    public float minVertical;
-    public float maxVertical;
-    public float minHorizontal;
-    public float maxHorizontal;
-    public float minOffscreenVertical;
-    public float maxOffScreenVertical;
+    public Boundary verticalBoundary;
+    public Boundary horizontalBoundary;
+    public Boundary offscreenBoundary;
 
     [Range(5.0f, 10.0f)]
     public float minVerticalSpeed;
@@ -46,8 +43,8 @@ public class CloudController : MonoBehaviour
 
     void ResetGameObject()
     {
-        var randomXPosition = Random.Range(minHorizontal, maxHorizontal);
-        var randomYPosition = Random.Range(minOffscreenVertical, minOffscreenVertical);
+        var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
+        var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
         horizontalSpeed = Random.Range(minHorizontalSpeed, maxHorizontalSpeed);
         verticalSpeed = Random.Range(minVerticalSpeed, maxVerticalSpeed);
         transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
@@ -55,12 +52,12 @@ public class CloudController : MonoBehaviour
 
     void Move()
     {
-        transform.position += new Vector3(horizontalSpeed * Time.deltaTime, -verticalSpeed * Time.deltaTime, 0.0f);
+        transform.position += new Vector3(-horizontalSpeed * Time.deltaTime, -verticalSpeed * Time.deltaTime, 0.0f);
     }
 
     void CheckBounds()
     {
-        if (transform.position.y <= minHorizontal)
+        if (transform.position.y <= verticalBoundary.min)
         {
             ResetGameObject();
         }
