@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.AdaptivePerformance.VisualScripting;
 
 public class PlayerBehaviour : MonoBehaviour
 {
     [Header("Movement Properties")]
-    public float max;
-    public float min;
+    public Boundary horizontalBoundary;
     public float horizontalSpeed;
     public float verticalPosition;
 
@@ -28,30 +26,22 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Move()
     {
-        /**
-        var x = Input.GetAxisRaw("Horizontal") * horizontalSpeed * Time.deltaTime;
-        transform.position += new Vector3(x, 0.0f, 0.0f);
-        */
-
         if (Input.touchCount > 0)
         {
             var x = Input.touches[0].position.x;
             var horizontalPosition = Camera.main.ScreenToWorldPoint(new Vector3(x, 0.0f, 0.0f)).x;
-            // print(horizontalPosition);
-
             transform.position = new Vector3(horizontalPosition, verticalPosition, 0.0f);
         }
-           
     }
 
     void CheckBounds()
     {
-        if (transform.position.x <= min)
+        if (transform.position.x <= horizontalBoundary.min)
         {
-            transform.position = new Vector3(min, transform.position.y, 0.0f);
+            transform.position = new Vector3(horizontalBoundary.min, transform.position.y, 0.0f);
         }
-        else if (transform.position.x >= max) {
-            transform.position = new Vector3(max, transform.position.y, 0.0f);
+        else if (transform.position.x >= horizontalBoundary.max) {
+            transform.position = new Vector3(horizontalBoundary.max, transform.position.y, 0.0f);
         }
     }
 
@@ -64,7 +54,6 @@ public class PlayerBehaviour : MonoBehaviour
         else if(collision.gameObject.CompareTag("Cloud")) 
         { 
             thunderSound.Play();
-        }
-        
+        } 
     }
 }
