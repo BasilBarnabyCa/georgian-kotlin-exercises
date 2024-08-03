@@ -147,9 +147,11 @@ MonoBehaviour:
   offscreenBoundary:
     min: 5.63
     max: 7.63
-  minVerticalSpeed: 5
-  maxVerticalSpeed: 10
+  verticalSpeedLimit:
+    min: 5
+    max: 10
+  horizontalSpeedLimit:
+    min: -2
+    max: 2
   verticalSpeed: 0
-  minHorizontalSpeed: -2
-  maxHorizontalSpeed: 2
   horizontalSpeed: 0

@@ -5,14 +5,11 @@ public class OceanController : MonoBehaviour
     public Boundary boundary;
     public float verticalSpeed;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ResetGameObject();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

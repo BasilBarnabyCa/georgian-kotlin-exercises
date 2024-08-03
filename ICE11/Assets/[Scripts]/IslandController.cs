@@ -5,20 +5,13 @@ public class IslandController : MonoBehaviour
     [Header("Movement Properties")]
     public Boundary verticalBoundary;
     public Boundary horizontalBoundary;
-    /*public float minVertical;
-    public float maxVertical;
-    public float minHorizontal;
-    public float maxHorizontal;*/
     public float verticalSpeed;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ResetGameObject();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

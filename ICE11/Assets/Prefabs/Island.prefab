@@ -141,6 +141,6 @@ MonoBehaviour:
     min: -5.65
     max: 5.65
   horizontalBoundary:
-    min: 0
-    max: 0
+    min: -1.7
+    max: 1.7
   verticalSpeed: 5

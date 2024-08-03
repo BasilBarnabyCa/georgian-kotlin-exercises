@@ -2,39 +2,24 @@ using UnityEngine;
 
 public class CloudController : MonoBehaviour
 {
-    [Header("Movement Properties")]
+    [Header("Boundary Properties")]
     public Boundary verticalBoundary;
     public Boundary horizontalBoundary;
     public Boundary offscreenBoundary;
 
-    [Range(5.0f, 10.0f)]
-    public float minVerticalSpeed;
-
-    [Range(5.0f, 10.0f)]
-    public float maxVerticalSpeed;
-
+    [Header("Speed Properties")]
     public float verticalSpeed;
-
-    [Range(-2.0f, 2.0f)]
-    public float minHorizontalSpeed;
-
-    [Range(-2.0f, 2.0f)]
-    public float maxHorizontalSpeed;
-    
     public float horizontalSpeed;
 
+    // Instanciate boundary with min and max values instead of using Range annotation
+    public Boundary verticalSpeedLimit = new Boundary(5.0f, 10.0f);
+    public Boundary horizontalSpeedLimit = new Boundary(-2.0f, 2.0f);
 
-    //create boudnary class for min max
-    // create super class for all
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ResetGameObject();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -45,8 +30,10 @@ public class CloudController : MonoBehaviour
     {
         var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
         var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
-        horizontalSpeed = Random.Range(minHorizontalSpeed, maxHorizontalSpeed);
-        verticalSpeed = Random.Range(minVerticalSpeed, maxVerticalSpeed);
+
+        horizontalSpeed = Random.Range(horizontalSpeedLimit.min, horizontalSpeedLimit.max);
+        verticalSpeed = Random.Range(verticalSpeedLimit.min, verticalSpeedLimit.max);
+
         transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
     }
 
