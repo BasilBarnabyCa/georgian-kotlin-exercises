@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class IslandController : MonoBehaviour
 {
-    public float minVertical;
+    [Header("Movement Properties")]
+    public Boundary verticalBoundary;
+    public Boundary horizontalBoundary;
+    /*public float minVertical;
     public float maxVertical;
     public float minHorizontal;
-    public float maxHorizontal;
+    public float maxHorizontal;*/
     public float verticalSpeed;
 
 
@@ -24,8 +27,8 @@ public class IslandController : MonoBehaviour
 
     void ResetGameObject()
     {
-        var randomXPosition = Random.Range(minHorizontal, maxHorizontal);
-        transform.position = new Vector3(randomXPosition, maxVertical, 0.0f);
+        var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
+        transform.position = new Vector3(randomXPosition, verticalBoundary.max, 0.0f);
     }
 
     void Move()
@@ -35,7 +38,7 @@ public class IslandController : MonoBehaviour
 
     void CheckBounds()
     {
-        if (transform.position.y <= minHorizontal)
+        if (transform.position.y <= verticalBoundary.min)
         {
             ResetGameObject();
         }
