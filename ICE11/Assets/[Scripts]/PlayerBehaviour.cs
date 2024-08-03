@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    [Header("Movement Properties")]
+    [Header("Position Properties")]
     public Boundary horizontalBoundary;
-    public float horizontalSpeed;
     public float verticalPosition;
+
+    [Header("Speed Properties")]
+    public float horizontalSpeed;
 
     [Header("Audio Properties")]
     public AudioSource yaySound;

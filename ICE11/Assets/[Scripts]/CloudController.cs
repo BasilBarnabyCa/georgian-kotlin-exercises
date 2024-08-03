@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CloudController : MonoBehaviour
 {
-    [Header("Boundary Properties")]
+    [Header("Position Properties")]
     public Boundary verticalBoundary;
     public Boundary horizontalBoundary;
     public Boundary offscreenBoundary;

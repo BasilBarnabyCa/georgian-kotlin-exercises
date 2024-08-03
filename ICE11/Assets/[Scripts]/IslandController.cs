@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class IslandController : MonoBehaviour
 {
-    [Header("Movement Properties")]
+    [Header("Position Properties")]
     public Boundary verticalBoundary;
     public Boundary horizontalBoundary;
+
+    [Header("Speed Properties")]
     public float verticalSpeed;
 
     void Start()
