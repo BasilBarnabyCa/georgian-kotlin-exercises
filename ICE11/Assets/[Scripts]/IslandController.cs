@@ -1,41 +1,19 @@
 using UnityEngine;
 
-public class IslandController : MonoBehaviour
+public class IslandController : MovementController
 {
     [Header("Position Properties")]
     public Boundary verticalBoundary;
     public Boundary horizontalBoundary;
 
-    [Header("Speed Properties")]
-    public float verticalSpeed;
-
     void Start()
     {
-        ResetGameObject();
+        ResetGameObject(horizontalBoundary, verticalBoundary.max);
     }
 
     void Update()
     {
         Move();
-        CheckBounds();
-    }
-
-    void ResetGameObject()
-    {
-        var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
-        transform.position = new Vector3(randomXPosition, verticalBoundary.max, 0.0f);
-    }
-
-    void Move()
-    {
-        transform.position += new Vector3(0.0f, -verticalSpeed * Time.deltaTime, 0.0f);
-    }
-
-    void CheckBounds()
-    {
-        if (transform.position.y <= verticalBoundary.min)
-        {
-            ResetGameObject();
-        }
+        CheckBounds(verticalBoundary);
     }
 }

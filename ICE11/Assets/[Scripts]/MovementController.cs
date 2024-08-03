@@ -39,6 +39,12 @@ public class MovementController : MonoBehaviour
         SetPosition(0.0f, yPosition, 0.0f);
     }
 
+    protected virtual void ResetGameObject(Boundary horizontalBoundary, float yPosition)
+    {
+        var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
+        SetPosition(randomXPosition, yPosition, 0.0f);
+    }
+
     protected void SetPosition(float xPosition, float yPosition, float zPosition)
     {
         transform.position = new Vector3(xPosition, yPosition, zPosition);
