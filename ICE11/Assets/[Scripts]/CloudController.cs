@@ -24,7 +24,7 @@ public class CloudController : MovementController
 
     void Update()
     {
-        Move(horizontalSpeed, verticalSpeed, 0.0f);
+        Move(horizontalSpeed, verticalSpeed);
         CheckBounds();
     }
 
@@ -35,7 +35,7 @@ public class CloudController : MovementController
             var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
             var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
 
-            transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
+            transform.position = new Vector3(randomXPosition, randomYPosition);
         }
     }
 }

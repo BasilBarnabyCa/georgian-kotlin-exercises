@@ -16,7 +16,7 @@ public class PlayerBehaviour : MovementController
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SetPosition(0.0f, verticalPosition, 0.0f);
+        SetPosition(0.0f, verticalPosition);
     }
 
     // Update is called once per frame

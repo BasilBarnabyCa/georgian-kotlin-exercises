@@ -16,9 +16,9 @@ public abstract class MovementController : MonoBehaviour
     /// <param name="xPosition">The horizontal speed.</param>
     /// <param name="yPosition">The vertical speed.</param>
     /// <returns>Does not return a value.</returns>
-    public virtual void Move(float xPosition, float yPosition, float zPosition)
+    public virtual void Move(float xPosition, float yPosition)
     {
-        transform.position += new Vector3(-xPosition * Time.deltaTime, -yPosition * Time.deltaTime, zPosition);
+        transform.position += new Vector3(-xPosition * Time.deltaTime, -yPosition * Time.deltaTime, 0.0f);
     }
 
     /// <summary>
@@ -27,8 +27,8 @@ public abstract class MovementController : MonoBehaviour
     /// <param name="xPosition">The x-coordinate of the new position.</param>
     /// <param name="yPosition">The y-coordinate of the new position.</param>
     /// <returns>Does not return a value.</returns>
-    public void SetPosition(float xPosition, float yPosition, float zPosition)
+    public void SetPosition(float xPosition, float yPosition)
     {
-        transform.position = new Vector3(xPosition, yPosition, zPosition);
+        transform.position = new Vector3(xPosition, yPosition, 0.0f);
     }
 }

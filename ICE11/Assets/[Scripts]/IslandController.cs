@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class IslandController : MovementController
 {
@@ -17,7 +16,7 @@ public class IslandController : MovementController
 
     void Update()
     {
-        Move(0.0f, verticalSpeed, 0.0f);
+        Move(0.0f, verticalSpeed);
         CheckBounds();
     }
 
@@ -26,7 +25,7 @@ public class IslandController : MovementController
         if (transform.position.y <= verticalBoundary.min)
         {
             var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
-            SetPosition(randomXPosition, verticalBoundary.max, 0.0f);
+            SetPosition(randomXPosition, verticalBoundary.max);
         }
     }
 }
