@@ -17,11 +17,6 @@ public class MovementController : MonoBehaviour
     //    CheckBounds();
     //}
 
-    protected virtual void Move() 
-    {
-        transform.position += new Vector3(0.0f, -verticalSpeed * Time.deltaTime, 0.0f);
-    }
-
     protected virtual void CheckBounds() { }
 
     protected virtual void CheckBounds(Boundary boundary) 
@@ -29,6 +24,14 @@ public class MovementController : MonoBehaviour
         if (transform.position.y <= boundary.min)
         {
             ResetGameObject(boundary.max);
+        }
+    }
+
+    protected virtual void CheckBounds(Boundary horizontalBoundary, Boundary verticalBoundary)
+    {
+        if (transform.position.y <= verticalBoundary.min)
+        {
+            ResetGameObject(horizontalBoundary, verticalBoundary.max);
         }
     }
 
@@ -43,6 +46,11 @@ public class MovementController : MonoBehaviour
     {
         var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
         SetPosition(randomXPosition, yPosition, 0.0f);
+    }
+
+    protected virtual void Move()
+    {
+        transform.position += new Vector3(0.0f, -verticalSpeed * Time.deltaTime, 0.0f);
     }
 
     protected void SetPosition(float xPosition, float yPosition, float zPosition)
