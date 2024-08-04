@@ -35,6 +35,15 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    protected virtual void CheckBounds(Boundary horizontalBoundary,  Boundary verticalBoundary, Boundary offscreenBoundary, Boundary horizontalSpeedLimit, Boundary verticalSpeedLimit)
+    {
+        if (transform.position.y <= verticalBoundary.min)
+        {
+            ResetGameObject(horizontalBoundary, offscreenBoundary, horizontalSpeedLimit, verticalSpeedLimit);
+        }
+    }
+
+
     protected virtual void ResetGameObject() { }
 
     protected virtual void ResetGameObject(float yPosition) 
@@ -46,6 +55,17 @@ public class MovementController : MonoBehaviour
     {
         var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
         SetPosition(randomXPosition, yPosition, 0.0f);
+    }
+
+    protected virtual void ResetGameObject(Boundary horizontalBoundary, Boundary offscreenBoundary, Boundary horizontalSpeedLimit, Boundary verticalSpeedLimit)
+    {
+        var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
+        var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
+
+        horizontalSpeed = Random.Range(horizontalSpeedLimit.min, horizontalSpeedLimit.max);
+        verticalSpeed = Random.Range(verticalSpeedLimit.min, verticalSpeedLimit.max);
+
+        transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
     }
 
     protected virtual void Move()
