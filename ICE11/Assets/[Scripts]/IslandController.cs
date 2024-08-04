@@ -16,7 +16,7 @@ public class IslandController : MovementController
 
     void Update()
     {
-        Move(verticalSpeed);
+        Move(0.0f, verticalSpeed, 0.0f);
         CheckBounds(horizontalBoundary, verticalBoundary);
     }
 }

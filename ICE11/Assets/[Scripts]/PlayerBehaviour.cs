@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour
+public class PlayerBehaviour : MovementController
 {
     [Header("Position Properties")]
     public Boundary horizontalBoundary;
@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = new Vector3(0.0f, verticalPosition, 0.0f);
+        SetPosition(0.0f, verticalPosition, 0.0f);
     }
 
     // Update is called once per frame

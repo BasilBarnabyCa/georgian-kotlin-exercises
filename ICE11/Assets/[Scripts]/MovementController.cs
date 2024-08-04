@@ -2,23 +2,6 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    //[Header("Speed Properties")]
-    //public float verticalSpeed;
-    //public float horizontalSpeed;
-
-    //protected virtual void Start()
-    //{
-    //    ResetGameObject();
-    //}
-
-    //protected virtual void Update()
-    //{
-    //    Move();
-    //    CheckBounds();
-    //}
-
-    protected virtual void CheckBounds() { }
-
     protected virtual void CheckBounds(Boundary boundary) 
     {
         if (transform.position.y <= boundary.min)
@@ -62,12 +45,12 @@ public class MovementController : MonoBehaviour
         transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
     }
 
-    protected virtual void Move(float verticalSpeed)
+    protected virtual void Move(float xPosition, float yPosition, float zPosition)
     {
-        transform.position += new Vector3(0.0f, -verticalSpeed * Time.deltaTime, 0.0f);
+        transform.position += new Vector3(-xPosition * Time.deltaTime, -yPosition * Time.deltaTime, zPosition);
     }
 
-    protected void SetPosition(float xPosition, float yPosition, float zPosition)
+    public void SetPosition(float xPosition, float yPosition, float zPosition)
     {
         transform.position = new Vector3(xPosition, yPosition, zPosition);
     }

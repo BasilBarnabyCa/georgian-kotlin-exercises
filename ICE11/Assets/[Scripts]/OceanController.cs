@@ -15,7 +15,7 @@ public class OceanController : MovementController
 
     void Update()
     {
-        Move(verticalSpeed);
+        Move(0.0f, verticalSpeed, 0.0f);
         CheckBounds(boundary);
     }
 }

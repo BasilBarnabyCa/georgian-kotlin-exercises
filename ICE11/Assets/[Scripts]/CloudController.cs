@@ -24,12 +24,7 @@ public class CloudController : MovementController
 
     void Update()
     {
-        Move(horizontalSpeed, verticalSpeed);
+        Move(horizontalSpeed, verticalSpeed, 0.0f);
         CheckBounds(horizontalBoundary, verticalBoundary, offscreenBoundary);
-    }
-
-    void Move(float horizontalSpeed, float verticalSpeed)
-    {
-        transform.position += new Vector3(-horizontalSpeed * Time.deltaTime, -verticalSpeed * Time.deltaTime, 0.0f);
     }
 }
