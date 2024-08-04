@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class OceanController : MovementController
 {
@@ -21,6 +22,11 @@ public class OceanController : MovementController
 
     public override void CheckBounds()
     {
-        ApplyBounds(boundary);
+        if (transform.position.y <= boundary.min)
+        {
+            SetPosition(0.0f, boundary.max, 0.0f);
+        }
     }
+
+
 }

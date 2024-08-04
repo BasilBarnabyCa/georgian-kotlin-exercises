@@ -30,6 +30,12 @@ public class CloudController : MovementController
 
     public override void CheckBounds()
     {
-        ApplyBounds(horizontalBoundary, verticalBoundary, offscreenBoundary);
+        if (transform.position.y <= verticalBoundary.min)
+        {
+            var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
+            var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
+
+            transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
+        }
     }
 }
