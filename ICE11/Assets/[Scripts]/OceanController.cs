@@ -10,12 +10,17 @@ public class OceanController : MovementController
 
     void Start()
     {
-        ResetGameObject(boundary.max);
+        CheckBounds();
     }
 
     void Update()
     {
         Move(0.0f, verticalSpeed, 0.0f);
-        CheckBounds(boundary);
+        CheckBounds();
+    }
+
+    public override void CheckBounds()
+    {
+        ApplyBounds(boundary);
     }
 }

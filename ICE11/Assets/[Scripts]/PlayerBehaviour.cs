@@ -26,6 +26,7 @@ public class PlayerBehaviour : MovementController
         CheckBounds();
     }
 
+    // Override the Move method from the MovementController class
     void Move()
     {
         if (Input.touchCount > 0)
@@ -36,7 +37,7 @@ public class PlayerBehaviour : MovementController
         }
     }
 
-    void CheckBounds()
+    public override void CheckBounds()
     {
         if (transform.position.x <= horizontalBoundary.min)
         {

@@ -17,7 +17,7 @@ public class CloudController : MovementController
 
     void Start()
     {
-        ResetGameObject(horizontalBoundary, offscreenBoundary);
+        CheckBounds();
         horizontalSpeed = Random.Range(horizontalSpeedLimit.min, horizontalSpeedLimit.max);
         verticalSpeed = Random.Range(verticalSpeedLimit.min, verticalSpeedLimit.max);
     }
@@ -25,6 +25,11 @@ public class CloudController : MovementController
     void Update()
     {
         Move(horizontalSpeed, verticalSpeed, 0.0f);
-        CheckBounds(horizontalBoundary, verticalBoundary, offscreenBoundary);
+        CheckBounds();
+    }
+
+    public override void CheckBounds()
+    {
+        ApplyBounds(horizontalBoundary, verticalBoundary, offscreenBoundary);
     }
 }

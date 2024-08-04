@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class MovementController : MonoBehaviour
+public abstract class MovementController : MonoBehaviour
 {
-    protected virtual void CheckBounds(Boundary boundary) 
+    public abstract void CheckBounds();
+
+    public void ApplyBounds(Boundary boundary) 
     {
         if (transform.position.y <= boundary.min)
         {
@@ -10,7 +12,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected virtual void CheckBounds(Boundary horizontalBoundary, Boundary verticalBoundary)
+    public void ApplyBounds(Boundary horizontalBoundary, Boundary verticalBoundary)
     {
         if (transform.position.y <= verticalBoundary.min)
         {
@@ -18,7 +20,7 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected virtual void CheckBounds(Boundary horizontalBoundary,  Boundary verticalBoundary, Boundary offscreenBoundary)
+    public void ApplyBounds(Boundary horizontalBoundary,  Boundary verticalBoundary, Boundary offscreenBoundary)
     {
         if (transform.position.y <= verticalBoundary.min)
         {
@@ -26,18 +28,18 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected virtual void ResetGameObject(float yPosition) 
+    public void ResetGameObject(float yPosition) 
     {
         SetPosition(0.0f, yPosition, 0.0f);
     }
 
-    protected virtual void ResetGameObject(Boundary horizontalBoundary, float yPosition)
+    public void ResetGameObject(Boundary horizontalBoundary, float yPosition)
     {
         var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
         SetPosition(randomXPosition, yPosition, 0.0f);
     }
 
-    protected virtual void ResetGameObject(Boundary horizontalBoundary, Boundary offscreenBoundary)
+    public void ResetGameObject(Boundary horizontalBoundary, Boundary offscreenBoundary)
     {
         var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
         var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
@@ -45,7 +47,7 @@ public class MovementController : MonoBehaviour
         transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
     }
 
-    protected virtual void Move(float xPosition, float yPosition, float zPosition)
+    public virtual void Move(float xPosition, float yPosition, float zPosition)
     {
         transform.position += new Vector3(-xPosition * Time.deltaTime, -yPosition * Time.deltaTime, zPosition);
     }

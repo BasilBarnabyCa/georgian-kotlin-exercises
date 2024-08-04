@@ -11,12 +11,17 @@ public class IslandController : MovementController
 
     void Start()
     {
-        ResetGameObject(horizontalBoundary, verticalBoundary.max);
+        CheckBounds();
     }
 
     void Update()
     {
         Move(0.0f, verticalSpeed, 0.0f);
-        CheckBounds(horizontalBoundary, verticalBoundary);
+        CheckBounds();
+    }
+
+    public override void CheckBounds()
+    {
+        ApplyBounds(horizontalBoundary, verticalBoundary);
     }
 }
