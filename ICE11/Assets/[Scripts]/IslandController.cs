@@ -6,6 +6,9 @@ public class IslandController : MovementController
     public Boundary verticalBoundary;
     public Boundary horizontalBoundary;
 
+    [Header("Speed Properties")]
+    public float verticalSpeed;
+
     void Start()
     {
         ResetGameObject(horizontalBoundary, verticalBoundary.max);
@@ -13,7 +16,7 @@ public class IslandController : MovementController
 
     void Update()
     {
-        Move();
+        Move(verticalSpeed);
         CheckBounds(horizontalBoundary, verticalBoundary);
     }
 }

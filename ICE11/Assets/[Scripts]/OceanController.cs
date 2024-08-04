@@ -5,6 +5,9 @@ public class OceanController : MovementController
     [Header("Position Properties")]
     public Boundary boundary;
 
+    [Header("Speed Properties")]
+    public float verticalSpeed;
+
     void Start()
     {
         ResetGameObject(boundary.max);
@@ -12,7 +15,7 @@ public class OceanController : MovementController
 
     void Update()
     {
-        Move();
+        Move(verticalSpeed);
         CheckBounds(boundary);
     }
 }

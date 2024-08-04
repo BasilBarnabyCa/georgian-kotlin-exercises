@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    [Header("Speed Properties")]
-    public float verticalSpeed;
-    public float horizontalSpeed;
+    //[Header("Speed Properties")]
+    //public float verticalSpeed;
+    //public float horizontalSpeed;
 
     //protected virtual void Start()
     //{
@@ -35,16 +35,13 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    protected virtual void CheckBounds(Boundary horizontalBoundary,  Boundary verticalBoundary, Boundary offscreenBoundary, Boundary horizontalSpeedLimit, Boundary verticalSpeedLimit)
+    protected virtual void CheckBounds(Boundary horizontalBoundary,  Boundary verticalBoundary, Boundary offscreenBoundary)
     {
         if (transform.position.y <= verticalBoundary.min)
         {
-            ResetGameObject(horizontalBoundary, offscreenBoundary, horizontalSpeedLimit, verticalSpeedLimit);
+            ResetGameObject(horizontalBoundary, offscreenBoundary);
         }
     }
-
-
-    protected virtual void ResetGameObject() { }
 
     protected virtual void ResetGameObject(float yPosition) 
     {
@@ -57,18 +54,15 @@ public class MovementController : MonoBehaviour
         SetPosition(randomXPosition, yPosition, 0.0f);
     }
 
-    protected virtual void ResetGameObject(Boundary horizontalBoundary, Boundary offscreenBoundary, Boundary horizontalSpeedLimit, Boundary verticalSpeedLimit)
+    protected virtual void ResetGameObject(Boundary horizontalBoundary, Boundary offscreenBoundary)
     {
         var randomXPosition = Random.Range(horizontalBoundary.min, horizontalBoundary.max);
         var randomYPosition = Random.Range(offscreenBoundary.min, offscreenBoundary.max);
 
-        horizontalSpeed = Random.Range(horizontalSpeedLimit.min, horizontalSpeedLimit.max);
-        verticalSpeed = Random.Range(verticalSpeedLimit.min, verticalSpeedLimit.max);
-
         transform.position = new Vector3(randomXPosition, randomYPosition, 0.0f);
     }
 
-    protected virtual void Move()
+    protected virtual void Move(float verticalSpeed)
     {
         transform.position += new Vector3(0.0f, -verticalSpeed * Time.deltaTime, 0.0f);
     }
