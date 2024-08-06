@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
 
     public void LoseLife()
     {
-        m_lives -= 1;
+        m_lives--;
         SetLivesLabel(m_lives);
     }
 
