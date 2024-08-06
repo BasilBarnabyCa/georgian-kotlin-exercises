@@ -13,9 +13,12 @@ public class PlayerBehaviour : MovementController
     public AudioSource yaySound;
     public AudioSource thunderSound;
 
+    public GameController gameController;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         SetPosition(0.0f, verticalPosition);
     }
 
@@ -53,10 +56,12 @@ public class PlayerBehaviour : MovementController
         if (collision.gameObject.CompareTag("Island"))
         {
             yaySound.Play();
+            gameController.AddScore(100);
         }
         else if(collision.gameObject.CompareTag("Cloud")) 
         { 
             thunderSound.Play();
+            gameController.LoseLife();
         } 
     }
 }
